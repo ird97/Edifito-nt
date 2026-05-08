@@ -1,48 +1,33 @@
-# 1. Bloquea toda la data extraída y procesada para evitar fugas 
-*.csv
+# Archivos descargados desde Edifito
+Gastos_Comunes_Edifito/
+ggcc_ordenaditos/
+boletasculiasgenteculia_excel/
+*.pdf
 *.xlsx
 *.xls
-*.rtf
-*.pdf
-*.txt
-ANEXOS/
-input/
-output/
-downloads/
+*.jpg
+*.jpeg
+*.zip
 
-# 2. Archivos con claves de Edifito o variables de entorno
-.env
-secretos.py
-config_privada.py
-secrets.toml
+# Reportes generados por los scripts
+REPORTE_AUDITORIA_FINAL.xlsx
+revisionywe_historica.xlsx
+auditoria_final_historica.xlsx
 
-# 3. Archivos del sistema
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Python
 __pycache__/
-*.py[cod]
-*$py.class
-.venv/
+*.pyc
+*.pyo
+
+# Entornos virtuales
 venv/
-ENV/
-build/
-dist/
-*.egg-info/
+.venv/
+env/
 
-# 4. Para no subir el ejecutable del navegador
-chromedriver
-geckodriver
-chromedriver.exe
-geckodriver.exe
-*.log
-
-# 5. Configuración de VS Code o PyCharm
+# Configuración de IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-
-# 6. Archivos ocultos de macOS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
