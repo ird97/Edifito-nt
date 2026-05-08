@@ -1,0 +1,14 @@
+# Requisitos
+
+1. Para correr estos scripts lo fundamental es que tengas Python instalado en tu supercomputadora, porque sin eso no hay arranque. Python ya trae su instalador de paquetes, así que con eso te alcanza. 
+
+2. Después necesitas Google Chrome, porque varios de los scripts lo usan para moverse por internet y hacer descargas. También vas a precisar conexión a internet para los que entran a Edifito, y por supuesto tu usuario y contraseña para iniciar sesión en el momento que te lo pida la terminal.
+
+3. Con eso listo, abres una terminal y escribes pip install pandas openpyxl selenium webdriver-manager requests. Eso baja todo lo que hace falta para que los scripts funcionen. Lo demás ya viene de fábrica con Python.
+
+4. Antes de lanzar cualquier cosa, cambia las rutas que veas en los archivos —las que dicen /Users/ian/... o menciones a carpetas como Gastos_Comunes_Edifito— por las que tu tengas/quieras. Cada script espera los archivos de cierta manera, los que procesan planillas ya descargadas necesitan una carpeta por año con los excel adentro llamados "enero2024.xlsx" y así; el que ordena archivos sueltos, en cambio, necesita que tires todos los excel desordenados en una misma carpeta. Fijate también que donde vayas a guardar resultados o descargas tengas permiso para escribir, porque los scripts crean carpetas y mueven cosas sin avisar.
+
+5. Cuando ejecutes los que usan Selenium, se te abre Chrome, iniciás sesión en Edifito a mano y si este falla en achuntarle al link, busca donde iniciar sesión en el mismo Selenium, te diriges a donde esta la página del desglose de GG.CC., ahí vuelves a la terminal, das Enter y el script arranca. No toques las pausas que traen (los time.sleep), están puestas para no exigir demasiado al servidor y que no te bloqueen. Y ojo que descargaBoletaFacturaAdjunta.py descarga de todo: PDFs, JPGs, ZIPs; los otros son especializados, sólo bajan PDFs o sólo .xlsx (excel).
+
+6. Detalle: si modificas en tu computador el .xlsx, este puede que transforme el tipo de archivo y te juegue una mala pasada si quieres ejecutar codigo pensando que todos siguen como .xlsx; en el caso de macos, te los cambia a Number, puedes exportar tu mod a .csv que es más versatil o usar un convertidor de archivos para dejar todos iguales o como desees. 
+
