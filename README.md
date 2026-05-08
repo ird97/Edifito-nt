@@ -49,17 +49,6 @@ Organiza un conjunto de archivos Excel de gastos comunes que originalmente está
 # renombrarexcelsopcional.py
 Recorre una jerarquía de carpetas por año (en mi caso es de 2018 a 2026) y renombra archivos .xlsx (excels) que no sigan la nomenclatura esperada mesaño.xlsx. Para cada archivo, intenta detectar el mes primero buscando el nombre del mes en español dentro del nombre del archivo; si no lo encuentra, extrae números de 1 al 12 (obviamente 1 siendo enero y 12 diciembre) mediante una expresión regular y lo asigna. Una vez identificado el mes y conocido el año por la carpeta contenedora, crea el nuevo nombre y renombra para evitar sobrescribir agregando un sufijo numérico si el nuevo nombre ya existe. Omite los archivos que ya tienen el formato deseado e informa aquellos cuyo mes no pudo ser determinado.
 
-# Requisitos:
-
-1. Para correr estos scripts lo fundamental es que tengas Python instalado en tu máquina, porque sin eso no hay arranque. Python ya trae su instalador de paquetes, así que con eso te alcanza. Después necesitás Google Chrome, porque varios de los scripts lo usan para moverse por internet y hacer descargas. También vas a precisar conexión a internet para los que entran a Edifito, y por supuesto tu usuario y contraseña para iniciar sesión en el momento que te lo pida la terminal.
-
-2. Con eso listo, abrís una terminal y escribís pip install pandas openpyxl selenium webdriver-manager requests. Eso baja todo lo que hace falta para que los scripts funcionen. Lo demás ya viene de fábrica con Python.
-
-3. Antes de lanzar cualquier cosa, cambiá las rutas que veas en los archivos —las que dicen /Users/ian/... o menciones a carpetas como Gastos_Comunes_Edifito— por las que vos tengas. Cada script espera los archivos de cierta manera: los que procesan planillas ya descargadas necesitan una carpeta por año con los excel adentro llamados "enero2024.xlsx" y así; el que ordena archivos sueltos, en cambio, necesita que tires todos los excel desordenados en una misma carpeta. Fijate también que donde vayas a guardar resultados o descargas tengas permiso para escribir, porque los scripts crean carpetas y mueven cosas sin avisar.
-
-4. Cuando ejecutes los que usan Selenium, se te abre Chrome, iniciás sesión en Edifito a mano, volvés a la terminal, presionás Enter y el script arranca. No toques las pausas que traen (los time.sleep), están puestas para no exigir demasiado al servidor y que no te bloqueen. Y ojo que descargaBoletaFacturaAdjunta.py descarga de todo: PDFs, JPGs, ZIPs; los otros son especializados, solo bajan PDFs o solo Excel.
-
-A bajar esos gastos comunes! 
 
 # Ejemplo de mi resultado con calculalosexceltotales.py
 
