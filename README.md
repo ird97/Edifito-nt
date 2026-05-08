@@ -8,6 +8,7 @@ La arquitectura del sitio está pensada para que cualquier extracción masiva se
 
 <img width="1699" height="918" alt="Captura de pantalla 2026-05-07 a la(s) 21 35 39" src="https://github.com/user-attachments/assets/e4cabb61-5355-4913-ac34-67eafbedcaf7" />
 
+
 <img width="1695" height="899" alt="Captura de pantalla 2026-05-07 a la(s) 21 37 37" src="https://github.com/user-attachments/assets/6aa2b39c-e183-48fa-bc9c-1f1db194649b" />
 
 El inicio de sesión puede automatizarse con la cookie de sesión pero para mi fue más rápido iniciar sesión en cada automatización con selenium para asegurarme de que tuviera el camino correcto, así que en todos los scripts la autenticación es manual. Una vez logueado, arranca la parte de seleccionar año y mes, enviar el formulario con JavaScript y esperar a que la página recargue por completo. Edifito comete un error grave cuando un mes no tiene información, pues en vez de mostrar un aviso o una pantalla vacía, recarga silenciosamente el último mes válido que el servidor tenga en caché. Si no validas que el mes devuelto coincide con el que pediste, terminás archivando datos que no corresponden. Los scripts chequean justo eso comparando los selectores después de cada recarga y solo siguen adelante si el período es correcto.
@@ -59,3 +60,37 @@ Recorre una jerarquía de carpetas por año (en mi caso es de 2018 a 2026) y ren
 4. Cuando ejecutes los que usan Selenium, se te abre Chrome, iniciás sesión en Edifito a mano, volvés a la terminal, presionás Enter y el script arranca. No toques las pausas que traen (los time.sleep), están puestas para no exigir demasiado al servidor y que no te bloqueen. Y ojo que descargaBoletaFacturaAdjunta.py descarga de todo: PDFs, JPGs, ZIPs; los otros son especializados, solo bajan PDFs o solo Excel.
 
 A bajar esos gastos comunes! 
+
+# Ejemplo de mi resultado con calculalosexceltotales.py
+
+<img width="998" height="834" alt="Captura de pantalla 2026-05-07 a la(s) 22 40 16" src="https://github.com/user-attachments/assets/d479ee4f-03a6-4c91-9b5f-102f9c9b4551" />
+
+
+<img width="756" height="552" alt="Captura de pantalla 2026-05-07 a la(s) 22 41 04" src="https://github.com/user-attachments/assets/5b5ea764-8901-480f-bda8-de595d0c9fef" />
+
+
+<img width="894" height="995" alt="Captura de pantalla 2026-05-07 a la(s) 22 41 50" src="https://github.com/user-attachments/assets/e3102a2d-abd1-49ff-9ff1-a83aa84502ab" />
+
+
+<img width="1083" height="946" alt="Captura de pantalla 2026-05-07 a la(s) 22 43 10" src="https://github.com/user-attachments/assets/aacbadab-2e2b-4508-9294-f33bba7ed57d" />
+
+
+<img width="848" height="576" alt="Captura de pantalla 2026-05-07 a la(s) 22 43 34" src="https://github.com/user-attachments/assets/34c18bee-2239-48d3-a213-70c69d43afef" />
+
+# Ejemplo descarga cartolas
+
+<img width="701" height="457" alt="Captura de pantalla 2026-05-07 a la(s) 22 44 31" src="https://github.com/user-attachments/assets/b316a6e7-b7b4-4f1d-8caf-a8c9dc56dafb" />
+
+
+<img width="844" height="929" alt="Captura de pantalla 2026-05-07 a la(s) 22 49 04" src="https://github.com/user-attachments/assets/196498ba-b321-4aa4-a3ab-5531bd710a26" />
+
+
+<img width="699" height="428" alt="Captura de pantalla 2026-05-07 a la(s) 22 49 50" src="https://github.com/user-attachments/assets/55949a97-b399-4d1e-8547-4c46de4545b0" />
+
+
+# Con los excels una vez ya organizados, se puede usar software o codigo para herramientas de auditoria 
+
+
+<img width="1200" height="500" alt="ANEXO 3 7 (graficoevolucion)" src="https://github.com/user-attachments/assets/959184d2-4a81-4e36-864c-aaa4feaa2eab" />
+
+
