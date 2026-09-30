@@ -4,11 +4,6 @@ Extracción, "normalización" y organización de los antecedentes financieros qu
 
 La arquitectura del sitio está pensada para que cualquier extracción masiva sea difícil y poco eficiente. No existen endpoints RESTful ni URLs persistentes para los documentos; en su lugar el sistema se apoya en formularios con campos ocultos, scripts que ejecutan métodos POST y parámetros de consulta ofuscados en hexadecimal como 0x2200. Las validaciones de referrer (strict-origin-when-cross-origin) y los timers de sesión del lado del cliente impiden cualquier parsing estático. Con Selenium, se mantuvo la sesión.
 
-<img width="1699" height="918" alt="Captura de pantalla 2026-05-07 a la(s) 21 35 39" src="https://github.com/user-attachments/assets/e4cabb61-5355-4913-ac34-67eafbedcaf7" />
-
-
-<img width="1695" height="899" alt="Captura de pantalla 2026-05-07 a la(s) 21 37 37" src="https://github.com/user-attachments/assets/6aa2b39c-e183-48fa-bc9c-1f1db194649b" />
-
 El inicio de sesión puede automatizarse con la cookie de sesión pero para mi fue más rápido iniciar sesión en cada automatización con Selenium para asegurarme de que tuviera el camino correcto, así que en todos los scripts la autenticación es manual. Una vez logueado, arranca la parte de seleccionar año y mes, enviar el formulario con JavaScript y esperar a que la página recargue por completo. Edifito omite en que un mes no tiene información, nos muestra un aviso o una pantalla vacía, recarga silenciosamente el último mes válido que el servidor tenga en caché. Si no validas que el mes devuelto coincide con el que pediste, puedes archivar datos que no corresponden. Los scripts chequean justo eso comparando los selectores después de cada recarga y solo siguen adelante si el período es correcto.
 
 Los archivos que se bajan también vienen con lo suyo. Si elijes descargar las cartolas en PDF, todas se llaman gasto_comun.pdf y el sistema operativo les agrega el (1), (2) como gasto_comun(1).pdf, gasto_comun(2).pdf y así. Si seleccionas el "Excel" (xlsx), el nombre es Gasto_Comun.xlsx sin ninguna referencia al mes ni al año, y puedes descargar el mismo período infinitas veces sin que la plataforma te advierta. Al repetir una descarga, el navegador empieza a renombrar automáticamente con Copia1, Copia2, etc. Un desorden en nombres. 
